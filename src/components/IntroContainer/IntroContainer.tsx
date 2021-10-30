@@ -1,8 +1,6 @@
 import React from 'react';
 import { makeStyles, Theme, Typography } from '@material-ui/core';
 import Swoosh from './swoosh';
-import VideoLogo from './VideoLogo';
-import TwilioLogo from './TwilioLogo';
 import { useAppState } from '../../state';
 import UserMenu from './UserMenu/UserMenu';
 import { useLocation } from 'react-router-dom';
@@ -12,7 +10,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: 'rgb(40, 42, 43)',
+    //background: 'rgb(40, 42, 43)',
+    background:
+      'url(' +
+      'https://media.istockphoto.com/photos/top-view-photo-of-halloween-decorations-pumpkin-baskets-candy-corn-picture-id1333723812?b=1&k=20&m=1333723812&s=170667a&w=0&h=fx8P2tDpPlcLGMi8x6D3AsbkzanvTJ2T4gKZyyAhOJ0=' +
+      ')',
+    alt: '',
+    backgroundPosition: 'top',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
     height: '100%',
   },
   container: {
@@ -57,10 +63,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
       alignItems: 'center',
-      width: '90%',
+      width: '100%',
       textAlign: 'initial',
       '& svg': {
-        height: '64px',
+        height: '500px',
       },
     },
   },
@@ -100,15 +106,14 @@ const IntroContainer = (props: IntroContainerProps) => {
 
   return (
     <div className={classes.background}>
-      <TwilioLogo className={classes.twilioLogo} />
       {user && location.pathname !== '/login' && <UserMenu />}
       <div className={classes.container}>
         <div className={classes.innerContainer}>
           <div className={classes.swooshContainer}>
             <div className={classes.logoContainer}>
-              <VideoLogo />
+              <img src="https://img.icons8.com/color/96/000000/jack-o-lantern--v1.png" />
               <Typography variant="h6" className={classes.title}>
-                Twilio Programmable Video
+                Hallo: A Halloween Themed Video Conferencing Solution
               </Typography>
             </div>
           </div>
