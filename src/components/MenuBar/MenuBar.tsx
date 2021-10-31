@@ -86,10 +86,18 @@ export default function MenuBar() {
           </Hidden>
           <Grid item>
             <Grid container justifyContent="center">
+              <img alt="bat" src="https://img.icons8.com/ios/48/000000/bat--v2.png" />
+              <img alt="jack" src="https://img.icons8.com/ios-glyphs/48/000000/jack-o-lantern.png" />
+              <img alt="costume" src="https://img.icons8.com/color/48/000000/halloween-costume.png" />
+              <img alt="" src="https://img.icons8.com/color/50/000000/ghost--v1.png" />
               <ToggleAudioButton disabled={isReconnecting} />
               <ToggleVideoButton disabled={isReconnecting} />
               {!isSharingScreen && !isMobile && <ToggleScreenShareButton disabled={isReconnecting} />}
               {process.env.REACT_APP_DISABLE_TWILIO_CONVERSATIONS !== 'true' && <ToggleChatButton />}
+              <img alt="costume" src="https://img.icons8.com/color/48/000000/halloween-costume.png" />
+              <img alt="jack" src="https://img.icons8.com/ios-glyphs/48/000000/jack-o-lantern.png" />
+              <img alt="bat" src="https://img.icons8.com/ios/48/000000/bat--v2.png" />
+              <img alt="" src="https://img.icons8.com/color/50/000000/ghost--v1.png" />
               <Hidden smDown>
                 <Menu />
               </Hidden>
