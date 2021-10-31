@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import AboutDialog from '../../AboutDialog/AboutDialog';
+import GameDialog from './GameDialog';
 import BackgroundIcon from '../../../icons/BackgroundIcon';
 import DeviceSelectionDialog from '../../DeviceSelectionDialog/DeviceSelectionDialog';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -41,6 +42,7 @@ export default function Menu(props: { buttonClassName?: string }) {
 
   const [aboutOpen, setAboutOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [gameOpen, setGameOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   const { isFetching, updateRecordingRules, roomType } = useAppState();
@@ -81,6 +83,12 @@ export default function Menu(props: { buttonClassName?: string }) {
           horizontal: 'center',
         }}
       >
+        <MenuItem onClick={() => setGameOpen(true)}>
+          <IconContainer>
+            <InfoIconOutlined />
+          </IconContainer>
+          <Typography variant="body1">Play 🎃</Typography>
+        </MenuItem>
         <MenuItem onClick={() => setSettingsOpen(true)}>
           <IconContainer>
             <SettingsIcon />
@@ -155,6 +163,13 @@ export default function Menu(props: { buttonClassName?: string }) {
         open={aboutOpen}
         onClose={() => {
           setAboutOpen(false);
+          setMenuOpen(false);
+        }}
+      />
+      <GameDialog
+        open={gameOpen}
+        onClose={() => {
+          setGameOpen(false);
           setMenuOpen(false);
         }}
       />

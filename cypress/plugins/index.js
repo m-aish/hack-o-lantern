@@ -63,6 +63,11 @@ module.exports = (on, config) => {
       await page.click('[data-cy-send-message-button]');
       return Promise.resolve(null);
     },
+    // playGame: async name => {
+    //   const page = participants[name];
+    //   await page.click('[data-cy-share-screen]');
+    //   return Promise.resolve(null);
+    // }
   };
   on('task', participantFunctions);
 };
